@@ -1,4 +1,4 @@
-# Exposing gRPC microservices with Nginx Istio on GKE
+# Exposing gRPC microservices with Istio on GKE
 
 ### Clone this repo and switch to branch "grpc_istio".
 
