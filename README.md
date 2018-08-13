@@ -1,9 +1,9 @@
-# Exposing gRPC microservices with GLBC (GCE Ingress Controller) on GKE
+# Exposing gRPC microservices with GLBC (GCE Ingress Controller) and NEG on GKE
 
-### Clone this repo and switch to branch "grpc_gce_glbc".
+### Clone this repo and switch to branch "grpc_gce_glbc_neg".
 
 ```sh
-git checkout grpc_gce_glbc
+git checkout grpc_gce_glbc_neg
 ```
 
 ### Create a new cluster
@@ -13,11 +13,11 @@ cd k8s_deployments/
 bash create_k8s_cluster.sh
 ```
 
-### Deploy gRPC microservices with GLBC using automation script.
+### Deploy gRPC microservices with GLBC and NEG using automation script.
 
 ```sh
 cd k8s_deployments/
-bash grpc_with_glbc_installation.sh 
+bash grpc_neg_with_glbc_installation.sh 
 ```
 
 ### Get Ingress IP Address  
