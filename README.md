@@ -20,7 +20,31 @@ cd k8s_deployments/nginx_controller/
 bash grpc_service_with_nginx_controller_installation.sh
 ```
 
-### Access the application at
+### Get Ingress IP 
+
+```sh
+kubectl get ing -o wide --all-namespaces
+```
+
+### Make entry in /etc/hosts file to access the application via browser and cli  
+
+```sh
+# /etc/hosts
+<ing_ip>	delivery.gship.com
+```
+
+### Access the applicatin via CLI  
+
+```sh
+## to send request to carrier servie 
+
+cd client_service && python carrier_cli_load_test.py 
+
+## to send request to shipment servie 
+cd client_service && python shipment_cli_load_test.py
+```
+
+### Access the application on broser
 
 ```sh
 https://delivery.gship.com/ui
