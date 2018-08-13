@@ -46,7 +46,7 @@ kubectl exec -it <pods> -n kube-system bash
 <ing_ip>	delivery.gship.com
 ```
 
-### Access the applicatin via CLI  
+### Access the application via CLI  
 
 ```sh
 ## to send request to carrier servie 
@@ -56,7 +56,7 @@ cd client_service && python carrier_cli_load_test.py
 cd client_service && python shipment_cli_load_test.py
 ```
 
-### Access the application on broser
+### Access the application on browser
 
 ```sh
 https://delivery.gship.com/ui
