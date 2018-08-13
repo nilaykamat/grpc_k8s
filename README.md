@@ -37,7 +37,6 @@ kubectl get ing -o wide --all-namespaces
 
 ```sh
 ## to send request to carrier servie 
-
 cd client_service && python carrier_cli_load_test.py 
 
 ## to send request to shipment servie 
