@@ -33,19 +33,6 @@ kubectl get service haproxy-ingress -n ingress-controller
 <ing_ip>	delivery.gship.com
 ```
 
-### Check your PODs running in the Cluster. Access the Carrier PODs and make entry in /etc/hosts file to access the application via cli  
-
-```sh
-# Get carrier pods
-kubectl get po -n kube-system | grep -i -e "carrier" 
-
-# You have to make manual entry in /etc/hosts file
-kubectl exec -it <pods> -n kube-system bash 
- 
-# /etc/hosts
-<ing_ip>	delivery.gship.com
-```
-
 ### Access the application via CLI  
 
 ```sh
