@@ -1,0 +1,54 @@
+
+## shippment_service.yaml
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shippment
+  namespace: kube-system
+  labels:
+    app: shippment
+spec:
+  clusterIP: None
+  ports:
+  - port: 50051
+    protocol: TCP
+    targetPort: 50051
+  selector:
+    app: shippment
+
+---
+
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: shippment
+  namespace: kube-system
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: shippment
+  template:
+    metadata:
+      labels:
+        app: shippment
+    spec:
+        containers:
+        - name: shippment
+          image: gcr.io/pso-suchit/grpc-microservice/shippment:haproxy
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 50051
+            name: ship-port
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "64Mi"
+              cpu: "250m"
+
+
