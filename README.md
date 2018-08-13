@@ -26,9 +26,22 @@ bash grpc_service_with_nginx_controller_installation.sh
 kubectl get ing -o wide --all-namespaces
 ```
 
-### Make entry in /etc/hosts file to access the application via browser and cli  
+### Make entry in your local /etc/hosts file.  
 
 ```sh
+# /etc/hosts
+<ing_ip>	delivery.gship.com
+```
+
+### Check your PODs running in the Cluster. Access the Shipment and Client PODs and make entry in /etc/hosts file to access the application via browser and cli  
+
+```sh
+# Get shipment and client pods
+kubectl get po -n kube-system | grep -i -e "shipment" -e "client" 
+
+# You have to make manual entry in /etc/hosts file
+kubectl exec -it <pods> -n kube-system bash 
+ 
 # /etc/hosts
 <ing_ip>	delivery.gship.com
 ```
