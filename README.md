@@ -20,10 +20,10 @@ cd k8s_deployments/istio/
 bash grpc_istio_installation.sh
 ```
 
-### Get Ingress IP 
+### Get Istio-Gateway IP 
 
 ```sh
-kubectl get ing -o wide --all-namespaces
+kubectl get svc istio-ingressgateway -n istio-system
 ```
 
 ### Make entry in your local /etc/hosts file.  
