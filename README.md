@@ -1,6 +1,6 @@
 # Exposing gRPC microservices with Ingress Controller on GKE
 
-### Switch to different branches 
+### Checkout different branches for solutions 
 
  
 1. Nginx Ingress Controller --> grpc_nginx_controller 
